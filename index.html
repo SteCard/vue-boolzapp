@@ -81,7 +81,7 @@
                     <!-- Left Contact Row -->
                     <div class="row contact-row">
                         <!-- Contact Col -->
-                        <div class="contact-col" v-for="(contact, index) in contacts">
+                        <div class="contact-col" :class=" activeChat === index ? 'contact-selected' : '' " v-for="(contact, index) in contacts">
                             <!-- Contact Info -->
                             <div class="contact-info">
                                 <!-- Contact Logo -->
@@ -145,32 +145,14 @@
                     <!-- Right Chat Row -->
                     <div class="row chat-row">
                         <!-- Chat Col -->
-                        <div class="chat-col">
-                            <!-- Message Sent -->
-                            <div class="message-content message-content-sent">
-                                <div class="message message-sent">
-                                    <span class="message-text">Hai portato a spasso il cane?</span>
-                                    <span class="message-time txt-grey">
-                                        15:30
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- Message Sent -->
-                            <div class="message-content message-content-sent">
-                                <div class="message message-sent">
-                                    <span class="message-text">Ricordati di stendere i panni</span>
-                                    <span class="message-time txt-grey">
-                                        15:50
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- Message Received -->
-                            <div class="message-content">
-                                <div class="message">
-                                    <span class="message-text">Tutto fatto!</span>
-                                    <span class="message-time txt-grey">
-                                        16:15
-                                    </span>
+                        <div class="chat-col" v-for="(contact, index) in contacts" v-show="activeChat === index">
+                            <!-- Message -->
+                            <div class="message-content" :class="messages.status === 'sent' ? 'message-content-sent' : ''" v-for="messages in contact.messages">
+                                <div class="message" :class=" messages.status === 'sent' ? 'message-sent' : '' ">
+                                    <!-- Message Text -->
+                                    <span class="message-text" v-text="messages.message"></span>
+                                    <!-- Message Time -->
+                                    <span class="message-time txt-grey" v-text="messages.date"></span>
                                 </div>
                             </div>
                         </div>
