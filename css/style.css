@@ -27,6 +27,11 @@ body{
         padding: 15px 20px;
         background-color: #8EDAFC;
     }
+    
+    /* SEARCH ROW */
+    .search-row{
+        padding: 10px;
+    }
 /* FINE ROW */
 
 /* COL */
@@ -62,6 +67,31 @@ body{
             font-size: 15px;
             color: grey;
             display: block;
+        }
+
+        /* SEARCH COL */
+        .search-col{
+            width: 100%;
+            display: flex;
+        }
+
+        .search-col > *{
+            border: 1px solid rgba(128, 128, 128, 0.333);
+        }
+
+        .search-col .search-button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            background-color: #fff;
+            color: gray;
+            cursor: pointer;
+        }
+
+        .search-col input{
+            width: calc(100% - 70px);
+            padding: 8px 10px;
         }
     /* FINE LEFT MAIN COL */
     
