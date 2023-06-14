@@ -9,14 +9,90 @@ body{
     background: linear-gradient(180deg, #009688 15%, #D9DBD4 15%);
 }
 
-.left-col{
-    width: 35%;
-    background-color: greenyellow;
-}
+/* ROW */
+    .main-row{
+        height: 100%;
+    }
 
-.right-col{
-    width: 65%;
-}
+    /* USER ROW */
+    .user-row{
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #EAEAEA;
+    }
+
+    /* USER BANNER ROW */
+    .banner-row{
+        padding: 15px 20px;
+        background-color: #8EDAFC;
+    }
+/* FINE ROW */
+
+/* COL */
+    /* LEFT MAIN COL */
+        .left-col{
+            width: 35%;
+            background-color: #fff;
+        }
+
+        /* USER INFO COL */
+        .user-info-col{
+            display: flex;
+            align-items: center;
+        }
+
+        .user-info-col span{
+            margin-left: 10px;
+        }
+
+        /* USER BUTTON COL */
+        .user-button-col *{
+            padding: 0 8px;
+            color: grey;
+            cursor: pointer;
+        }
+
+        /* BANNER TEXT COL */
+        .banner-text-col{
+            padding: 8px 10px;
+        }
+
+        .banner-text-col a{
+            font-size: 15px;
+            color: grey;
+            display: block;
+        }
+    /* FINE LEFT MAIN COL */
+    
+    /* RIGHT MAIN COL */
+        .right-col{
+            width: 65%;
+        }
+    /* FINE RIGHT MAIN COL */
+/* FINE COL */
+
+/* IMG LOGO */
+    .img-logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    .img-logo img{
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    .img-logo i{
+        color: #8EDAFC;
+    }
+/* FINE IMG LOGO */
 
 /* UTILITIES */
     .container{
@@ -27,7 +103,21 @@ body{
     }
 
     .row{
-        height: 100%;
         display: flex;
         flex-flow: row wrap;
     }
+
+    /* FONT WEIGHT */
+        .fw-500{
+            font-weight: 500;
+        }
+
+        .fw-600{
+            font-weight: 600;
+        }
+
+        .fw-700{
+            font-weight: 700;
+        }
+    /* FINE FONT WEIGHT */
+/* FINE UTILITIES */
