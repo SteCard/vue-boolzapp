@@ -6,4 +6,28 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(180deg, #009688 15%, #D9DBD4 15%);
 }
+
+.left-col{
+    width: 35%;
+    background-color: greenyellow;
+}
+
+.right-col{
+    width: 65%;
+}
+
+/* UTILITIES */
+    .container{
+        max-width: 1500px;
+        height: calc(100vh - 40px);
+        margin: 20px auto;
+        background-color: aquamarine;
+    }
+
+    .row{
+        height: 100%;
+        display: flex;
+        flex-flow: row wrap;
+    }
