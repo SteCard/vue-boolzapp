@@ -17,6 +17,7 @@ body{
     /* LEFT MAIN ROW */
         /* USER ROW */
         .user-row{
+            height: 70px;
             padding: 10px;
             justify-content: space-between;
             align-items: center;
@@ -25,12 +26,14 @@ body{
 
         /* USER BANNER ROW */
         .banner-row{
+            height: 85px;
             padding: 15px 20px;
             background-color: #8EDAFC;
         }
 
         /* SEARCH ROW */
         .search-row{
+            height: 55px;
             padding: 10px;
         }
 
@@ -42,12 +45,22 @@ body{
     /* FINE LEFT MAIN ROW */
     
     /* RIGHT MAIN ROW */
+        /* CONTACT BAR ROW */
+        .contact-bar-row{
+            height: 70px;
+            padding: 10px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #EAEAEA;
+            border-left: 1px solid rgba(128, 128, 128, 0.317);
+        }
     /* FINE RIGHT MAIN ROW */
 /* FINE ROW */
 
 /* COL */
     /* LEFT MAIN COL */
         .left-col{
+            height: 100%;
             width: 35%;
             background-color: #fff;
         }
@@ -122,7 +135,6 @@ body{
         .contact-info .contact-text span{
             font-size: 13px;
             margin-top: 2px;
-            display: block;
         }
 
         .contact-time span{
@@ -133,7 +145,29 @@ body{
     /* RIGHT MAIN COL */
         .right-col{
             width: 65%;
+            height: 100%;
         }
+
+        /* CONTACT BAR COL */
+        .contact-bar-col .contact-bar-info{
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-bar-info .contact-bar-text{
+            padding: 0 10px;
+        }
+
+        .contact-bar-info .contact-bar-text span{
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .contact-bar-button-col *{
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
     /* FINE RIGHT MAIN COL */
 /* FINE COL */
 
