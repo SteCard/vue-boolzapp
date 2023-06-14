@@ -14,24 +14,35 @@ body{
         height: 100%;
     }
 
-    /* USER ROW */
-    .user-row{
-        padding: 10px;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #EAEAEA;
-    }
+    /* LEFT MAIN ROW */
+        /* USER ROW */
+        .user-row{
+            padding: 10px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #EAEAEA;
+        }
 
-    /* USER BANNER ROW */
-    .banner-row{
-        padding: 15px 20px;
-        background-color: #8EDAFC;
-    }
+        /* USER BANNER ROW */
+        .banner-row{
+            padding: 15px 20px;
+            background-color: #8EDAFC;
+        }
+
+        /* SEARCH ROW */
+        .search-row{
+            padding: 10px;
+        }
+
+        /* CONTACT ROW */
+        .contact-row{
+            overflow-y: scroll;
+            cursor: pointer;
+        }
+    /* FINE LEFT MAIN ROW */
     
-    /* SEARCH ROW */
-    .search-row{
-        padding: 10px;
-    }
+    /* RIGHT MAIN ROW */
+    /* FINE RIGHT MAIN ROW */
 /* FINE ROW */
 
 /* COL */
@@ -54,7 +65,6 @@ body{
         /* USER BUTTON COL */
         .user-button-col *{
             padding: 0 8px;
-            color: grey;
             cursor: pointer;
         }
 
@@ -65,7 +75,6 @@ body{
 
         .banner-text-col a{
             font-size: 15px;
-            color: grey;
             display: block;
         }
 
@@ -85,13 +94,39 @@ body{
             align-items: center;
             width: 70px;
             background-color: #fff;
-            color: gray;
             cursor: pointer;
         }
 
         .search-col input{
             width: calc(100% - 70px);
             padding: 8px 10px;
+        }
+
+        /* CONTACT COL */
+        .contact-col{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 15px;
+            border-top: 1px solid rgba(128, 128, 128, 0.295);
+        }
+
+        .contact-col .contact-info{
+            display: flex;
+        }
+
+        .contact-info .contact-text{
+            padding: 8px 10px;
+        }
+
+        .contact-info .contact-text span{
+            font-size: 13px;
+            margin-top: 2px;
+            display: block;
+        }
+
+        .contact-time span{
+            font-size: 12px;
         }
     /* FINE LEFT MAIN COL */
     
@@ -107,8 +142,6 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50px;
-        height: 50px;
         border-radius: 50%;
         background-color: #fff;
         cursor: pointer;
@@ -121,6 +154,19 @@ body{
 
     .img-logo i{
         color: #8EDAFC;
+    }
+
+    /* USER LOGO E ICON LOGO */
+    .user-logo,
+    .icon-logo{
+        width: 50px;
+        height: 50px;
+    }
+
+    /* CONTACT LOGO */
+    .contact-logo{
+        width: 65px;
+        height: 65px;
     }
 /* FINE IMG LOGO */
 
@@ -137,6 +183,12 @@ body{
         flex-flow: row wrap;
     }
 
+    /* CONTACT SELECTED */
+        .contact-selected{
+            background-color: rgba(128, 128, 128, 0.189);
+        }
+    /* FINE CONTACT SELECTED */
+
     /* FONT WEIGHT */
         .fw-500{
             font-weight: 500;
@@ -150,4 +202,10 @@ body{
             font-weight: 700;
         }
     /* FINE FONT WEIGHT */
+
+    /* TEXT GREY */
+        .txt-grey{
+            color: grey;
+        }
+    /* FINE TEXT GREY */
 /* FINE UTILITIES */
