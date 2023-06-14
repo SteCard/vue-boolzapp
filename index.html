@@ -81,7 +81,7 @@
                     <!-- Left Contact Row -->
                     <div class="row contact-row">
                         <!-- Contact Col -->
-                        <div class="contact-col" :class=" activeChat === index ? 'contact-selected' : '' " v-for="(contact, index) in contacts">
+                        <div class="contact-col" :class=" activeChat === index ? 'contact-selected' : '' " v-for="(contact, index) in contacts" @click="changeChat(index)">
                             <!-- Contact Info -->
                             <div class="contact-info">
                                 <!-- Contact Logo -->
@@ -120,13 +120,13 @@
                                     <!-- Contact Logo -->
                                     <div class="img-logo user-logo">
                                         <!-- Contact Image -->
-                                        <img src="./img/avatar_1.jpg" alt="contact-logo">
+                                        <img :src="contacts[activeChat].avatar" alt="contact-logo">
                                     </div>
                                 </div>
                                 <!-- Contact Bar Text -->
                                 <div class="contact-bar-text">
                                     <!-- Contact Name -->
-                                    <h4 class="fw-500">Michele</h4>
+                                    <h4 class="fw-500" v-text="contacts[activeChat].name"></h4>
                                     <!-- Contact Last Access -->
                                     <span class="txt-grey fw-500">Ultimo accesso oggi alle 12:00</span>
                                 </div>

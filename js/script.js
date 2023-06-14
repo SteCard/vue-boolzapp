@@ -61,7 +61,6 @@ createApp({
                             status: 'sent'
                         }
                     ],
-                    activeChat  : true,
                     visible : true,
                 },
                 {
@@ -204,5 +203,9 @@ createApp({
     },
     // FUNZIONE METHODS
     methods:{
+        changeChat(index){ // QUANDO L'UTENTE CLICCA SUL CONTATTO, RENDO ATTIVA LA CHAT DI QUEL CONTATTO
+
+            this.activeChat = index;
+        },
     }
 }).mount('#app'); // COLLEGO L'APP VUE.JS AL DOM HTML
