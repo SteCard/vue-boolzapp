@@ -167,7 +167,7 @@
                         <!-- Input Message Col -->
                         <div class="input-message-col">
                             <!-- Input Message -->
-                            <input type="text" name="chat-message" id="chat-message" placeholder="Scrivi un messaggio">
+                            <input type="text" name="chat-message" id="chat-message" placeholder="Scrivi un messaggio" v-model="userMessage" @keyup.enter="newMessage">
                         </div>
                         <!-- Voice Audio Col -->
                         <div class="voice-audio-col">

@@ -11,6 +11,8 @@ createApp({
             // DEFINIZIONE VARIABILI VUE.JS
             activeChat : 0,
 
+            userMessage : '',
+
             // CONTACTS ARRAY
             contacts: [
                 {
@@ -203,9 +205,30 @@ createApp({
     },
     // FUNZIONE METHODS
     methods:{
-        changeChat(index){ // QUANDO L'UTENTE CLICCA SUL CONTATTO, RENDO ATTIVA LA CHAT DI QUEL CONTATTO
-
+        
+        // QUANDO L'UTENTE CLICCA SUL CONTATTO, RENDO ATTIVA LA CHAT DI QUEL CONTATTO
+        changeChat(index){
             this.activeChat = index;
         },
+
+        // QUANDO L'UTENTE CLICCA INVIO DOPO AVER INSERITO IL MESSAGGIO NELL'INPUT, VIENE PUSHATO IL NUOVO MESSAGGIO NELL'ARRAY MESSAGES DEL CONTATTO ATTIVO
+        newMessage(){
+            // CONTROLLO CHE L'UTENTE NON HA LASCIATO IL CAMPO INPUT VUOTO
+            if(this.userMessage !== ''){
+
+                // CREO UN NUOVO OGGETTO DA PUSHARE NELL'ARRAY MESSAGES DEL CONTATTO ATTIVO
+                let object = {
+                    date: 'oggi',
+                    message: this.userMessage,
+                    status: 'sent'
+                }
+
+                // PUSHO IL NUOVO OGGETTO NELL'ARRAY MESSAGES DEL CONTATTO ATTIVO
+                this.contacts[this.activeChat].messages.push(object);
+
+                // RIPRISTINO IL CAMPO INPUT E LA VARIABILE USER_MESSAGE
+                this.userMessage = '';
+            }
+        },            
     }
 }).mount('#app'); // COLLEGO L'APP VUE.JS AL DOM HTML
