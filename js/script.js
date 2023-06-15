@@ -13,6 +13,8 @@ createApp({
 
             userMessage : '',
 
+            userSearch  : '',
+
             // CONTACTS ARRAY
             contacts: [
                 {
@@ -249,6 +251,30 @@ createApp({
                 // PUSHO IL NUOVO OGGETTO NELL'ARRAY MESSAGES DEL CONTATTO ATTIVO
                 this.contacts[this.activeChat].messages.push(object);
             }, 1000);
-        }
+        },
+
+        // SEARCHBAR CONTATTI
+        searchFilter(){
+
+            // INSERISCO DENTRO UNA VARIABILE LA STRINGA INSERITA DALL'UTENTE NELL'INPUT DI RICERCA CONTATTO
+            let contactSearched = this.userSearch.toLowerCase(); 
+
+            // CICLO OGNI ELEMENTO DELL'ARRAY PER VEDERE SE CORRISPONDE CON LA RICERCA DELL'UTENTE
+            this.contacts.forEach((contact) => {
+                // INSERISCO DENTRO UNA VARIABILE IL NOME DI OGNI CONTATTO DELL'ARRAY CONTACTS
+                let contactName = contact.name.toLowerCase();
+
+                // CONTROLLO SE IL NOME INCLUDE LA STRINGA RICERCATA DALL'UTENTE
+                if (contactName.includes(contactSearched)){
+
+                    // SE IL NOME INCLUDE LA STRINGA RICERCATA DALL'UTENTE, SETTO LA VARIABILE VISIBLE IN TRUE
+                    contact.visible = true;
+
+                } else{
+                    // SE IL NOME NON INCLUDE LA STRINGA RICERCATA DALL'UTENTE, SETTO LA VARIABILE VISIBLE IN FALSE
+                    contact.visible = false;
+                }
+            });
+        },
     }
 }).mount('#app'); // COLLEGO L'APP VUE.JS AL DOM HTML

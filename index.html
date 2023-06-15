@@ -75,13 +75,13 @@
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
                             <!-- Search Input -->
-                            <input type="text" name="search-contact" id="search-contact" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" name="search-contact" id="search-contact" placeholder="Cerca o inizia una nuova chat" v-model="userSearch" @input="searchFilter()">
                         </div>
                     </div>
                     <!-- Left Contact Row -->
                     <div class="row contact-row">
                         <!-- Contact Col -->
-                        <div class="contact-col" :class=" activeChat === index ? 'contact-selected' : '' " v-for="(contact, index) in contacts" @click="changeChat(index)">
+                        <div class="contact-col" :class=" activeChat === index ? 'contact-selected' : '' " v-for="(contact, index) in contacts" v-show="contact.visible" @click="changeChat(index)">
                             <!-- Contact Info -->
                             <div class="contact-info">
                                 <!-- Contact Logo -->
