@@ -221,14 +221,34 @@ createApp({
                     date: 'oggi',
                     message: this.userMessage,
                     status: 'sent'
-                }
+                };
 
                 // PUSHO IL NUOVO OGGETTO NELL'ARRAY MESSAGES DEL CONTATTO ATTIVO
                 this.contacts[this.activeChat].messages.push(object);
 
                 // RIPRISTINO IL CAMPO INPUT E LA VARIABILE USER_MESSAGE
                 this.userMessage = '';
+
+                // RICHIAMO LA FUNZIONE AUTO_MESSAGE
+                this.autoMessage();
             }
-        },            
+        },
+        
+        // QUANDO L'UTENTE CLICCA INVIO DOPO AVER INSERITO IL MESSAGGIO NELL'INPUT, RICHIAMO LA FUNZIONE AUTO_MESSAGE
+        autoMessage(){
+            // AVVIO UNA TIMING FUNCTION SET_TIME_OUT CHE DOPO 1 SECONDO MI INVIA UN MESSAGGIO AUTOMATICO
+            setTimeout(() => {
+    
+                // CREO UN NUOVO OGGETTO DA PUSHARE NELL'ARRAY MESSAGES DEL CONTATTO ATTIVO
+                let object = {
+                    date: 'oggi',
+                    message: 'ok',
+                    status: 'received'
+                };
+    
+                // PUSHO IL NUOVO OGGETTO NELL'ARRAY MESSAGES DEL CONTATTO ATTIVO
+                this.contacts[this.activeChat].messages.push(object);
+            }, 1000);
+        }
     }
 }).mount('#app'); // COLLEGO L'APP VUE.JS AL DOM HTML
